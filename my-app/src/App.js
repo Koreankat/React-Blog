@@ -30,3 +30,4 @@ export default function App() {
     </Router>
   )
 }
+//npx json-server --watch data/db.json --port 8000
