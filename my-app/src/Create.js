@@ -5,10 +5,12 @@ const Create = () => {
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
   const [author, setAuthor] = useState("guest")
+
   const history = useHistory()
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     const blog = { title, body, author }
 
     fetch("http://localhost:8000/blogs/", {
@@ -16,7 +18,6 @@ const Create = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog),
     }).then(() => {
-      // history.go(-1);
       history.push("/")
     })
   }
